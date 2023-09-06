@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)]
-    [ValidateScript({Test-Path $_ -PathType Leaf})]
+    [ValidateScript({Test-Path $_ -PathType Any})]
     [string]$file_path
 )
 $parent_dir = Split-Path -Parent $PSScriptRoot
