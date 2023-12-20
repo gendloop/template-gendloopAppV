@@ -44,7 +44,7 @@
             "user": "gendloop",
             "repo": "Tools",
             "branch": "main",
-            "is_private": false,
+            "is_private": true,
             "token": ""
         },
         {
@@ -56,7 +56,7 @@
             "user": "gendloop",
             "repo": "Tools",
             "branch": "main",
-            "is_private": false,
+            "is_private": true,
             "token": ""
         },
         {
