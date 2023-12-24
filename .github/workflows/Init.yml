@@ -4,11 +4,11 @@ permissions:
   contents: write
   actions: write
 
-on: 
+on:
   push:
     branches:
       - main
-    
+
 jobs:
   init:
     if: github.repository != 'gendloop/template-gendloopAppV'
@@ -19,10 +19,10 @@ jobs:
         run: |
           repo_name=${GITHUB_REPOSITORY#*/}
           echo "reponame=$repo_name" >> "$GITHUB_OUTPUT"
-        
+
       - name: replace-README
         uses: gendloop/replace-str@main
-        with: 
+        with:
           token: ${{ github.token }}
           path-to-replace: README.md
           replace-to-path: README.md
@@ -31,7 +31,7 @@ jobs:
 
       - name: replace-App
         uses: gendloop/replace-str@main
-        with: 
+        with:
           token: ${{ github.token }}
           path-to-replace: App.json
           replace-to-path: ${{ steps.get-repo-name.outputs.reponame }}.json
@@ -50,5 +50,3 @@ jobs:
         with:
           token: ${{ github.token }}
           commit: "chore: Remove App.json and Init.yml"
-
-      
