@@ -44,6 +44,7 @@ jobs:
         run: |
           Remove-Item App.json
           Remove-Item .github/workflows/Init.yml
+          if (Test-Path sync_log.md) { Remove-Item sync_log.md -Force }
 
       - name: remove-useless-files-for-others
         if: ${{ github.actor != 'gendloop' }}
